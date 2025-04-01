@@ -1,0 +1,46 @@
+version: "3.1"
+
+stories:
+
+  - story: fluxo_feliz
+    steps:
+      - intent: cumprimentar
+      - action: utter_cumprimentar
+      - intent: informar_problema
+      - action: action_solucionar_problema 
+      - intent: problema_resolvido 
+      - action: utter_problema_resolvido
+      - intent: agradecer
+      - action: utter_agradecer
+      - intent: despedir
+      - action: utter_despedir
+
+  - story: fluxo_problema_nao_resolvido
+    steps:
+      - intent: cumprimentar
+      - action: utter_cumprimentar
+      - intent: informar_problema
+      - action: action_solucionar_problema  
+      - intent: problema_nao_resolvido  
+      - action: action_encaminhar_atendente  
+      - intent: despedir
+      - action: utter_despedir
+
+
+  - story: fluxo_pedir_ajuda
+    steps:
+      - intent: cumprimentar
+      - action: utter_cumprimentar
+      - intent: pedir_ajuda  
+      - action: utter_pedir_ajuda  
+      - intent: informar_problema
+      - action: action_solucionar_problema  
+      - intent: problema_resolvido
+      - action: utter_problema_resolvido
+      - intent: agradecer
+      - action: utter_agradecer
+      - intent: despedir
+      - action: utter_despedir
+
+
+

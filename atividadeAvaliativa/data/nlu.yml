@@ -1,0 +1,63 @@
+version: "3.1"
+
+nlu:
+  - intent: cumprimentar
+    examples: |
+      - oi
+      - olá
+      - bom dia
+      - boa tarde
+      - boa noite
+      - e aí?
+      - tudo bem?
+
+  - intent: agradecer
+    examples: |
+      - obrigado
+      - muito obrigado
+      - valeu
+      - agradeço
+      - grato
+
+  - intent: despedir
+    examples: |
+      - tchau
+      - até logo
+      - adeus
+      - até a próxima
+
+  - intent: pedir_ajuda
+    examples: |
+      - Estou precisando de ajuda, não consigo acessar minha conta.
+      - Estou com dificuldade para acessar meu plano, pode me ajudar?
+      - O que eu posso fazer para resolver esse problema?
+      - Estou com um problema para ouvir minhas músicas, você pode me ajudar?
+
+  - intent: informar_problema
+    examples: |
+      - As minhas músicas não estão carregando
+      - Não consigo encontrar as música ao pesquisar
+      - Não consigo escutar as músicas
+      - Não estou conseguindo acessar o meu plano
+      - Não estou conseguindo acessar a minha conta
+      - A página está carregando devagar
+
+  - intent: problema_resolvido
+    examples: |
+      - Consegui acessar a minha conta
+      - Consegui acessar o meu plano
+      - Agora estou conseguindo procurar as músicas
+      - Isso resolveu o meu problema
+      - Consegui escutar as músicas
+
+  - intent: problema_nao_resolvido
+    examples: |
+      - Meu problema não foi resolvido
+      - Não deu certo, continuo com o mesmo problema
+      - Realizei os procedimentos mas ainda não deu certo
+      - Preciso falar com um atendente pois o meu problema não foi resolvido
+
+
+
+
+
