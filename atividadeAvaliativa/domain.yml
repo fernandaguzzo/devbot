@@ -1,34 +1,45 @@
 version: "3.1"
-
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - cumprimentar
+  - agradecer
+  - informar_problema
+  - negar
+  - despedir
+  - pedir_ajuda
+  - relatar_erro_plataforma
+  - relatar_erro_outra_fonte
+  - problema_nao_resolvido
+  - problema_resolvido
+
+entities:
+  - problema
+
+slots:
+  problema:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: problema
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_cumprimentar:
+    - text: "Olá! Como posso te ajudar?"
+  utter_agradecer:
+    - text: "De nada!"
+  utter_despedir:
+    - text: "Até logo!"
+  utter_ajuda:
+    - text: "Em qual dessas categorias o seu problema se aplica? falha no carregamento de músicas, problemas com seu plano de assinatura ou erro no acesso a conta."
+  utter_problema_resolvido:
+    - text: "Fico feliz em saber que o problema foi resolvido!"
+  utter_problema_nao_resolvido:
+    - text: "Não consegui identificar o erro em questão, vou transferir para um atendente."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+actions:
+  - action_solucionar_problema
+  - action_encaminhar_atendente
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
