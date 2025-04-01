@@ -1,63 +1,45 @@
 version: "3.1"
-
 intents:
   - cumprimentar
   - agradecer
-  - informar_genero
+  - informar_problema
   - negar
   - despedir
-  - afirmar
   - pedir_ajuda
-  - pedir_recomendacao
-  - informar_genero_nao_listado
+  - relatar_erro_plataforma
+  - relatar_erro_outra_fonte
+  - problema_nao_resolvido
+  - problema_resolvido
 
-emitities:
-  - genero
+entities:
+  - problema
 
 slots:
-  genero:
+  problema:
     type: text
-  mappings:
-  - type: from_entity
-  entity: genero
+    mappings:
+      - type: from_entity
+        entity: problema
 
 responses:
   utter_cumprimentar:
-    - text: "Olá! Qual gênero de filme você prefere?"
-  
-  utter_perguntar_genero:
-    - text: "Qual gênero de filme você prefere?"
-  
-  utter_recomendar_filme:
-    - text: "Para o gênero {genero}, recomendo: {filmes}"
-  
-  utter_genero_nao_listado:
-    - text: " Desculpe, ainda não tenho recomendações para o gênero {genero}. Mas posso recomendar outros gêneros com: Ação, Comédia, Drama, Suspense, Terror, Romance e Ficção Científica"
-  
-  utter_negar:
-    - text: "Tudo bem. Posso te recomendar outro gênero?"
-
+    - text: "Olá! Como posso te ajudar?"
   utter_agradecer:
-    - text: "De nada! Espero que goste do filme."
-  
+    - text: "De nada!"
   utter_despedir:
-    - text: "Até logo! Se precisar de mais recomendações, é só chamar."
-
+    - text: "Até logo!"
   utter_ajuda:
-    - text: "Para te recomendar um filme, precisos aber qual gênero você prefere. Você pode me dizer algo como 'gosto de comédia' ou 'quero ver um filme de ação'."
-  
-  utter_afirmar:
-    - text: "Ótimo! Qual gênero você prefere?"
+    - text: "Em qual dessas categorias o seu problema se aplica? falha no carregamento de músicas, problemas com seu plano de assinatura ou erro no acesso a conta."
+  utter_problema_resolvido:
+    - text: "Fico feliz em saber que o problema foi resolvido!"
+  utter_problema_nao_resolvido:
+    - text: "Não consegui identificar o erro em questão, vou transferir para um atendente."
 
-  utter_genero_invalido:
-    - text: "Desculpe, não entendi o gênero. Você pode me dizer novamente?"
-  
-  utter_pedir_recomendacao:
-    - text: "Claro! Qual gênero de filme você prefere?"
+actions:
+  - action_solucionar_problema
+  - action_encaminhar_atendente
 
-  actions:
-    - action_recomendar_filme
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
-  session_config:
-    session_expiration_time: 60
-    carry_over_slots_to_new_session: true
