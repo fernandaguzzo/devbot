@@ -2,29 +2,17 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: buscar por titulo
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: buscar_livro_por_titulo
+    - action: action_buscar_por_titulo
 
-- story: sad path 1
+- story: buscar por autor
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: buscar_livro_por_autor
+    - action: action_buscar_por_autor
 
-- story: sad path 2
+- story: buscar por assunto
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: buscar_livro_por_assunto
+  - action: action_buscar_por_assunto

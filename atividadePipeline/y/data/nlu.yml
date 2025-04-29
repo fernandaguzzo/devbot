@@ -19,6 +19,11 @@ nlu:
   - quero livros do [Machado de Assis](autor)
   - me mostre obras escritas por [J.K.Rowling](autor)
 
+- intent: action_buscar_por_assunto
+  examples: |
+  - quero livros de [ação](assunto)
+  - me mostre livros de [terror](autor)
+  
 - intent: despedida
   examples: |
   - tchau 
